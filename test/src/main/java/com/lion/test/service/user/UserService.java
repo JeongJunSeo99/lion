@@ -40,6 +40,7 @@ public class UserService {
                 .collect(Collectors.toList());
     }
 
+    // 회원정보 수정 서비스. 기본적으로 name 변경. 단, age 값이 request로 넘어온 경우 age 값도 변경해줌 
     public void updateUsers(UserUpdateRequest request){
         User user = userRepository.findById(request.getId())
                 .orElseThrow(IllegalChannelGroupException::new);
